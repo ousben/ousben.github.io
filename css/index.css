@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
-  --red: #C5004A;
-  --darkred: #7F0036;
-  --lightgray: #e0e0e0;
-  --gray: #C0C0C0;
-  --darkgray: rgb(177, 177, 177);
-  --navy: #ff008c;
-  --blue: #288dda;
-  --white: #fff;
   --background-color: black;
   --text-color: white;
+  --shade-dimmed-1: rgba(255,255,255,0.15);
+  --shade-dimmed-2: rgba(255,255,255,0.3);
+  --vertical-padding: 5em;
+  --post-column-width: 450px;
 }
 * {
   box-sizing: border-box;
@@ -46,7 +42,7 @@ a {
 .button {
   display: inline-block;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.507);
+  border: 1px solid var(--shade-dimmed-2);
   border-radius: .2em;
   padding: 0.5em 1em;
   font-weight: 500;
@@ -54,23 +50,20 @@ a {
 }
 
 .button:hover {
-  background: white;
-  color: black;
+  background: var(--text-color);
+  color: var(--background-color);
 }
 
 main,
 footer {
-  margin: 1rem 5rem;
-}
-main {
-  padding-top: 1em;
+  margin: 1rem var(--vertical-padding);
 }
 header {
   display: flex;
   background: var(--background-color);
   position: sticky;
   top: 0;
-  padding: 1rem 5rem;
+  padding: 1rem var(--vertical-padding);
 }
 table {
   margin: 1em 0;
@@ -210,7 +203,7 @@ p,
   content: "";
   display: block;
   margin-top: .5em;
-  background-color: white;
+  background-color: currentColor;
   height: .1em;
   width: 100%;
   transition: ease-in-out .3s;
@@ -223,6 +216,10 @@ p,
 }
 
 @media (max-width: 700px) {
+  :root {
+    --vertical-padding: 2em;
+    --post-column-width: 100%;
+  }
   header {
     display: block;
     margin-bottom: 2em;
@@ -237,7 +234,7 @@ p,
 .postlist {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 450px);
+  grid-template-columns: repeat(auto-fill, var(--post-column-width));
   justify-content: center;
   margin: 4em 0;
   padding: 0;
@@ -266,12 +263,12 @@ p,
 .postlist-item-display {
   padding: 1em;
   padding-top: 2em;
+  color: white;
   background-image: linear-gradient(transparent, rgba(0,0,0,0.8));
 }
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
-  color: var(--text-color);
 }
 .postlist-tag {
   display: inline-block;
@@ -316,20 +313,20 @@ p,
   text-decoration: none;
   display: inline-block;
   padding: 1em 1.5em;
-  background-color: rgba(255,255,255,0.2);
+  background-color: var(--shade-dimmed-1);
   border-radius: 2em;
   transition: all .3s;
 }
 
 .post-tag:hover {
-  background-color: rgba(255,255,255,0.4);
+  background-color: var(--shade-dimmed-2);
 }
 
 /* Footer & Media links */
 footer {
-  border-top: 1px solid rgba(200,200,200,0.2);
+  border-top: 1px solid var(--shade-dimmed-1);
   margin-top: 3em;
-  padding-top: 3em;
+  padding-top: 2em;
   text-align: center;
 }
 .media-link {
@@ -341,11 +338,14 @@ footer {
   line-height: initial;
   font-size: 2em;
   padding: .5em;
-  margin: 0 1em;
+  margin: 1em;
   box-sizing: border-box;
   border-radius: 100%;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid var(--shade-dimmed-2);
   transition: ease-in 0.1s;
+}
+.media-link:hover {
+  border-color: transparent;
 }
 .media-link::after {
   content: "";
@@ -366,7 +366,6 @@ footer {
 }
 .media-link-twitter:hover {
   background: #1da1f2;
-  border-color: #1da1f2;
 }
 .media-link-linkedin::after {
   -webkit-mask-image: url(../img/social/linkedin.svg);
@@ -374,15 +373,17 @@ footer {
 }
 .media-link-linkedin:hover {
   background: #0077b5;
-  border-color: #0077b5;
+}
+.media-link-twitter:hover::after,
+.media-link-linkedin:hover::after {
+  color: white;
 }
 .media-link-mail::after {
   -webkit-mask-image: url(../img/social/mail.svg);
   mask-image: url(../img/social/mail.svg);
 }
 .media-link-mail:hover {
-  background: #666;
-  border-color: #666;
+  background: var(--shade-dimmed-2);
 }
 
 /* Direct Links / Markdown Headers */
@@ -415,7 +416,7 @@ a[href].direct-link:focus:visited,
   font-size: 10em;
   font-weight: 600;
   color: transparent;
-  -webkit-text-stroke: 2px white;
+  -webkit-text-stroke: 2px var(--text-color);
   text-shadow: rgba(255, 8, 0, 0.2) -.4em .25ch;
   transform: rotate(-2deg) translateX(.25em);
   transition: all 0.2s;
