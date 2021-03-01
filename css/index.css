@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
-  --background-color: black;
+  --background-color: #090b1a;
   --text-color: white;
-  --shade-dimmed-1: rgba(255,255,255,0.15);
-  --shade-dimmed-2: rgba(255,255,255,0.3);
+  --background-gradient: linear-gradient(to top right, rgba(255,255,255,0.08) 6vh, transparent);
+  --shade-dimmed-1: rgba(255,255,255,0.1);
+  --shade-dimmed-2: rgba(255,255,255,0.2);
+  --shade-dimmed-3: rgba(255,255,255,0.3);
   --vertical-padding: 5em;
   --post-column-width: 450px;
+  --illustration-404-size: 10em;
 }
 * {
   box-sizing: border-box;
@@ -19,6 +22,8 @@ body {
   letter-spacing: .5px;
   color: var(--text-color);
   background-color: var(--background-color);
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
 }
 
 h1 {
@@ -57,13 +62,18 @@ a {
 main,
 footer {
   margin: 1rem var(--vertical-padding);
+  z-index: 1;
 }
 header {
   display: flex;
-  background: var(--background-color);
+  align-items: center;
+  background-color: var(--background-color);
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
   position: sticky;
   top: 0;
   padding: 1rem var(--vertical-padding);
+  z-index: 2;
 }
 table {
   margin: 1em 0;
@@ -183,6 +193,7 @@ p,
 /* Nav */
 .nav {
   flex: 1;
+  margin: 0;
   padding: 0;
   text-align: right;
   list-style: none;
@@ -219,6 +230,7 @@ p,
   :root {
     --vertical-padding: 2em;
     --post-column-width: 100%;
+    --illustration-404-size: 20vw;
   }
   header {
     display: block;
@@ -322,6 +334,10 @@ p,
   background-color: var(--shade-dimmed-2);
 }
 
+.post-tag:hover:active {
+  background-color: var(--shade-dimmed-3);
+}
+
 /* Footer & Media links */
 footer {
   border-top: 1px solid var(--shade-dimmed-1);
@@ -341,7 +357,7 @@ footer {
   margin: 1em;
   box-sizing: border-box;
   border-radius: 100%;
-  border: 1px solid var(--shade-dimmed-2);
+  border: 1px solid var(--shade-dimmed-1);
   transition: ease-in 0.1s;
 }
 .media-link:hover {
@@ -408,20 +424,22 @@ a[href].direct-link:focus:visited,
 
 .illustration-404 {
   display: block;
+  margin: auto;
   -webkit-user-select: none;
   user-select: none;
   cursor: default;
   margin-top: .6em;
   margin-bottom: .6em;
-  font-size: 10em;
+  font-size: var(--illustration-404-size);
   font-weight: 600;
   color: transparent;
   -webkit-text-stroke: 2px var(--text-color);
-  text-shadow: rgba(255, 8, 0, 0.2) -.4em .25ch;
   transform: rotate(-2deg) translateX(.25em);
+  text-shadow: rgba(255, 8, 0, 0.2) -.4em .25ch;
   transition: all 0.2s;
 }
 
 .illustration-404:hover {
   transform: none;
+  text-shadow: none;
 }
