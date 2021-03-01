@@ -58,7 +58,6 @@ a {
   color: black;
 }
 
-header,
 main,
 footer {
   margin: 1rem 5rem;
@@ -68,6 +67,10 @@ main {
 }
 header {
   display: flex;
+  background: var(--background-color);
+  position: sticky;
+  top: 0;
+  padding: 1rem 5rem;
 }
 table {
   margin: 1em 0;
