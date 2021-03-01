@@ -5,9 +5,14 @@ eleventyNavigation:
   order: 1
 ---
 
+<h1>Hi, I'm BG du 92</h1>
 
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
+<img src="/img/profile-picture.jpg" class="profile-picture">
 
-<p><a href="{{ '/posts/' | url }}">More posts</a></p>
+<p>I am a French student who is interested in:</p>
+<ul class="all-tags">
+  {%- for tag in collections.tagList | sort %}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <li><a href="{{ tagUrl | url }}" class="post-tag">{{ tag | title }}</a></li>
+  {%- endfor %}
+</ul>

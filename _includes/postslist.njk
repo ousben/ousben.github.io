@@ -2,18 +2,18 @@
 {% for post in postslist | reverse %}
   <li>
   <a class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}" href="{{ post.url | url }}">
-    <img src="{{ post.data.img | url }}">
+    <img src="{{ post.data.img | url }}"/>
     <div class="postlist-item-display">
-      <span class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</span>
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
       {% for tag in post.data.tags %}
         {%- if collections.tagList.indexOf(tag) != -1 -%}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+        <span class="postlist-tag">{{ tag }}</span>
         {%- endif -%}
       {% endfor %}
+      <span class="postlist-title">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</span>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
     </div>
-    </a>
+  </a>
   </li>
 {% endfor %}
 </ul>

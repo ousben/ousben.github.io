@@ -1,9 +1,9 @@
 {
-  "title": "Houmouss",
+  "title": "Oussama Ben Guirat",
   "url": "https://example.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "I am a student interested in Finance.",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "I am a student interested in Finance.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://ousben.github.io/"
