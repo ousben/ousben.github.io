@@ -3,11 +3,14 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 <h1>{{ title }}</h1>
-<p>
+{%- if date %}
+<p class="post-meta">
 {{ date | readableDate }}
 <span class="dot-separator">·</span>
 {{ content | readingTime}}
 </p>
+{% endif %}
+
 {{ content | safe }}
 
 <div class="prev-next">
