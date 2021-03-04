@@ -12,6 +12,8 @@
       {% endfor %}
       <span class="postlist-title">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</span>
       <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      <span class="dot-separator">·</span>
+      <span>{{ post | readingTime}}</span>
     </div>
   </a>
   </li>
