@@ -383,6 +383,13 @@ footer {
 .media-link-twitter:hover {
   background: #1da1f2;
 }
+.media-link-instagram::after {
+  -webkit-mask-image: url(../img/social/instagram.svg);
+  mask-image: url(../img/social/instagram.svg);
+}
+.media-link-instagram:hover {
+  background: linear-gradient(180deg,#6851c3,#c63288 50%,#f78030);
+}
 .media-link-linkedin::after {
   -webkit-mask-image: url(../img/social/linkedin.svg);
   mask-image: url(../img/social/linkedin.svg);
