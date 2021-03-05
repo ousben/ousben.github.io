@@ -7,7 +7,7 @@
   --shade-dimmed-1: rgba(255,255,255,0.1);
   --shade-dimmed-2: rgba(255,255,255,0.2);
   --shade-dimmed-3: rgba(255,255,255,0.3);
-  --vertical-padding: 5em;
+  --horizontal-padding: 5em;
   --post-column-width: 450px;
   --illustration-404-size: 10em;
 }
@@ -61,7 +61,7 @@ a {
 
 main,
 footer {
-  margin: 1rem var(--vertical-padding);
+  margin: 1rem var(--horizontal-padding);
   z-index: 1;
 }
 header {
@@ -72,7 +72,7 @@ header {
   background-attachment: fixed;
   position: sticky;
   top: 0;
-  padding: 1rem var(--vertical-padding);
+  padding: 1rem var(--horizontal-padding);
   z-index: 2;
 }
 table {
@@ -141,7 +141,19 @@ pre {
 /* Home */
 
 .tmpl-home {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  height: 100vh;
+}
+
+.tmpl-home main {
+  flex-grow: 1;
+  overflow: auto;
+}
+.home-container {
+  display: flex;
+  height: calc(100vh-);
 }
 
 .profile-picture {
@@ -231,7 +243,7 @@ p,
 
 @media (max-width: 700px) {
   :root {
-    --vertical-padding: 2em;
+    --horizontal-padding: 2em;
     --post-column-width: 100%;
     --illustration-404-size: 20vw;
   }
@@ -344,8 +356,8 @@ p,
 /* Footer & Media links */
 footer {
   border-top: 1px solid var(--shade-dimmed-1);
-  margin-top: 3em;
-  padding-top: 2em;
+  margin-top: 0;
+  padding-top: 0;
   text-align: center;
 }
 .media-link {
