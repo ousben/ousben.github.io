@@ -7,6 +7,7 @@
   --shade-dimmed-1: rgba(255,255,255,0.1);
   --shade-dimmed-2: rgba(255,255,255,0.2);
   --shade-dimmed-3: rgba(255,255,255,0.3);
+  --media-link-margin: 1em;
   --horizontal-padding: 5em;
   --post-column-width: 450px;
   --illustration-404-size: 10em;
@@ -148,12 +149,24 @@ pre {
 }
 
 .tmpl-home main {
+  display: flex;
+  flex-wrap: wrap;
   flex-grow: 1;
   overflow: auto;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
-.home-container {
-  display: flex;
-  height: calc(100vh-);
+
+.home-content,
+.home-content h1 {
+  text-align: center;
+}
+
+@media (min-width: 701px) {
+  .home-content {
+    margin-left: 5em;
+  }
 }
 
 .profile-picture {
@@ -166,18 +179,18 @@ pre {
 
 /* Posts */
 
-.tmpl-post {
+.tmpl-post main {
   max-width: 1000px;
   margin: auto;
   padding-left: 2em;
   padding-right: 2em;
 }
-.tmpl-post li,
+.tmpl-post main li,
 img {
   max-width: 37.5em; /* 600px /16 */
 }
-p,
-.tmpl-post li {
+main p,
+.tmpl-post main li {
   line-height: 1.45;
 }
 .post-meta {
@@ -245,6 +258,7 @@ p,
   :root {
     --horizontal-padding: 2em;
     --post-column-width: 100%;
+    --media-link-margin: .25em;
     --illustration-404-size: 20vw;
   }
   header {
@@ -369,7 +383,7 @@ footer {
   line-height: initial;
   font-size: 2em;
   padding: .5em;
-  margin: 1em;
+  margin: var(--media-link-margin);
   box-sizing: border-box;
   border-radius: 100%;
   box-shadow: inset 0 0 0 1.5px var(--shade-dimmed-1);

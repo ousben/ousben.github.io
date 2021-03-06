@@ -4,19 +4,17 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-<div class="home-container">
-  <div>
-    <img src="/img/profile-picture.jpg" class="profile-picture">
-  </div>
-  <div>
-    <h1>Hi, I'm Oussama</h1>
-    <p>I am a French student who is interested in:</p>
-    <ul class="all-tags">
-      {%- for tag in collections.tagList | sort %}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <li><a href="{{ tagUrl | url }}" class="post-tag">{{ tag | title }}</a></li>
-      {%- endfor %}
-    </ul>
-  </div>
+<div>
+  <img src="/img/profile-picture.jpg" class="profile-picture">
+</div>
+<div class="home-content">
+  <h1>Hi, I'm Oussama</h1>
+  <p>I am a French student who is interested in:</p>
+  <ul class="all-tags">
+    {%- for tag in collections.tagList | sort %}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <li><a href="{{ tagUrl | url }}" class="post-tag">{{ tag | title }}</a></li>
+    {%- endfor %}
+  </ul>
 </div>
 
