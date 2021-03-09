@@ -11,6 +11,7 @@
   --horizontal-padding: 5em;
   --post-column-width: 450px;
   --illustration-404-size: 10em;
+  --home-content-font-size: 2.7em;
 }
 * {
   box-sizing: border-box;
@@ -45,13 +46,19 @@ em {
   font-style: normal;
   font-weight: 600;
 }
+
 a {
-  color: inherit;
+  color: #ff0051;
+}
+
+a:not(:hover) {
+  text-decoration: none;
 }
 
 .button {
   display: inline-block;
   text-decoration: none;
+  color: inherit;
   border: 1px solid var(--shade-dimmed-2);
   border-radius: .2em;
   padding: 0.5em 1em;
@@ -82,6 +89,7 @@ header {
   padding: 1rem var(--horizontal-padding);
   z-index: 2;
 }
+
 table {
   margin: 1em 0;
   text-align: left;
@@ -167,31 +175,42 @@ pre {
   flex-direction: row;
   flex-wrap: wrap;
   flex-grow: 1;
+  gap: 1em 5vw;
   overflow: auto;
   align-items: center;
   justify-content: center;
   padding: 1em 0;
 }
 
-.home-content h1 {
+.home-content {
+  flex-grow: 1;
+  flex-basis: 550px;
+  text-align: left;
+  margin: 0 .5em;
   text-align: justify;
   font-weight: 300;
-  font-size: 2.7em;
-}
-.home-content {
-  flex: 1;
+  font-size: var(--home-content-font-size);
+  line-height: 1.8;
 }
 
-@media (min-width: 701px) {
-  .home-content {
-    margin-left: 5em;
-  }
+.home-content p {
+  margin-bottom: 0;
+}
+
+.home-content ul {
+  list-style: "↳   ";
+  font-size: 0.9em;
+  font-weight: 600;
+  padding-left: 2em;
+}
+
+.home-content ul li::marker {
+  font-size: 0.8em;
 }
 
 .profile-picture {
   border-radius: 100%;
-  margin-bottom: 0.5em;
-  width: 400px;
+  width: 300px;
   max-width: 100%;
   aspect-ratio: 1/1;
 }
@@ -239,8 +258,9 @@ body:not(.tmpl-home):not(.tmpl-post) main {
   font-weight: normal;
   text-transform: none;
 }
-.home :link {
+.home a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* Nav */
@@ -262,6 +282,7 @@ body:not(.tmpl-home):not(.tmpl-post) main {
 .nav-item a {
   display: inline-block;
   overflow: hidden;
+  color: inherit;
 }
 .nav-item a::after {
   content: "";
@@ -279,16 +300,16 @@ body:not(.tmpl-home):not(.tmpl-post) main {
   transform: translate(-100%) scaleX(0);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   :root {
     --horizontal-padding: 2em;
     --post-column-width: 100%;
     --media-link-margin: .25em;
     --illustration-404-size: 20vw;
+    --home-content-font-size: 2em;
   }
   header {
     display: block;
-    margin-bottom: 2em;
   }
   .nav {
     margin-top: 2em;
@@ -503,7 +524,7 @@ a[href].direct-link:focus:visited,
   color: transparent;
   -webkit-text-stroke: 2px var(--text-color);
   transform: rotate(-2deg) translateX(.25em);
-  text-shadow: rgba(255, 8, 0, 0.2) -.4em .25ch;
+  text-shadow: #ff00513d -.4em .25ch;
   transition: all 0.2s;
 }
 

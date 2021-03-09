@@ -5,15 +5,15 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-<div>
+<div style="min-width: 0">
   <img src="/img/profile-picture.jpg" class="profile-picture">
 </div>
 <div class="home-content">
-  <h1>Hi, I'm <em>Oussama</em>. I’m a Master's student in <em>Corporate and Market Finance</em> at Panthéon-Assas University from <em>Paris, France</em>. I write posts about: </h1>
-  <ul class="all-tags">
+  <p>Hi, I'm <em>Oussama</em>. I’m a Master's student in <em>Corporate and Market Finance</em> at Panthéon-Assas University from <em>Paris</em>. I write posts about: </p>
+  <ul>
     {%- for tag in collections.tagList | sort %}
     {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-    <li><a href="{{ tagUrl | url }}" class="post-tag">{{ tag | title }}</a></li>
+    <li><a href="{{ tagUrl | url }}">{{ tag | title }}</a></li>
     {%- endfor %}
   </ul>
 </div>
