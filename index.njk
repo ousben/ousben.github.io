@@ -9,8 +9,7 @@ eleventyNavigation:
   <img src="/img/profile-picture.jpg" class="profile-picture">
 </div>
 <div class="home-content">
-  <h1>Hi, I'm Oussama</h1>
-  <p>I am a French student who is interested in:</p>
+  <h1>Hi, I'm <em>Oussama</em>. I’m a Master's student in <em>Corporate and Market Finance</em> at Panthéon-Assas University from <em>Paris, France</em>. I write posts about: </h1>
   <ul class="all-tags">
     {%- for tag in collections.tagList | sort %}
     {% set tagUrl %}/tags/{{ tag }}/{% endset %}
@@ -18,4 +17,3 @@ eleventyNavigation:
     {%- endfor %}
   </ul>
 </div>
-
