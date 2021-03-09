@@ -175,7 +175,7 @@ pre {
   flex-direction: row;
   flex-wrap: wrap;
   flex-grow: 1;
-  gap: 1em 5vw;
+  gap: 0 5vw;
   overflow: auto;
   align-items: center;
   justify-content: center;
@@ -198,14 +198,20 @@ pre {
 }
 
 .home-content ul {
-  list-style: "↳   ";
+  list-style: none;
   font-size: 0.9em;
   font-weight: 600;
-  padding-left: 2em;
+  padding-left: 0;
 }
 
-.home-content ul li::marker {
-  font-size: 0.8em;
+.home-content ul li a {
+  background: var(--text-color);
+  color: var(--background-color);
+  padding: .2em .5em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  line-height: 2.5;
+  box-shadow: 4px 4px 0 1px var(--background-color), 6px 6px 0 1px var(--text-color);
 }
 
 .profile-picture {
@@ -396,20 +402,14 @@ body:not(.tmpl-home):not(.tmpl-post) main {
 }
 
 .post-tag {
-  text-decoration: none;
   display: inline-block;
-  padding: 1em 1.5em;
-  background-color: var(--shade-dimmed-1);
-  border-radius: 2em;
+  background: var(--text-color);
+  color: var(--background-color);
+  font-weight: 600;
+  padding: .3em .5em;
+  font-size: 1em;
+  margin-bottom: 1em;
   transition: all .3s;
-}
-
-.post-tag:hover {
-  background-color: var(--shade-dimmed-2);
-}
-
-.post-tag:hover:active {
-  background-color: var(--shade-dimmed-3);
 }
 
 /* Footer & Media links */
