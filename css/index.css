@@ -38,6 +38,7 @@ h1 {
 p {
   margin-top: 2em;
   margin-bottom: 2em;
+  text-align: justify;
 }
 p:last-child {
   margin-bottom: 0;
