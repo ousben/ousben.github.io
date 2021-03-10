@@ -1,0 +1,19 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Oussama Ben Guirat",
+  "home_page_url": "https://example.com/",
+  "feed_url": "https://ousben.github.io/feed/feed.json",
+  "description": "I am a student interested in Finance.",
+  "author": {
+    "name": "Houmouss",
+    "url": "https://ousben.github.io/"
+  },
+  "items": [{
+      "id": "https://example.com/posts/firstpost/",
+      "url": "https://example.com/posts/firstpost/",
+      "title": "This is my third post",
+      "content_html": "",
+      "date_published": "2018-08-24T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Oussama Ben Guirat</title>
+	<subtitle>I am a student interested in Finance.</subtitle>
+	
+	<link href="https://example.com/feed/feed.xml" rel="self"/>
+	<link href="https://example.com/"/>
+	<updated>2018-08-24T00:00:00Z</updated>
+	<id>https://ousben.github.io/</id>
+	<author>
+		<name>Houmouss</name>
+		<email>benguiratoussama1998@gmail.com</email>
+	</author>
+	
+	<entry>
+		<title>This is my third post</title>
+		<link href="https://example.com/posts/firstpost/"/>
+		<updated>2018-08-24T00:00:00Z</updated>
+		<id>https://example.com/posts/firstpost/</id>
+		<content type="html"></content>
+	</entry>
+</feed>
