@@ -1,8 +1,8 @@
 ---
-title: This is my third post
-description: This is a post on My Blog about win-win survival strategies.
-date: 2018-08-24
-img: /img/profile-picture.jpg
+title: Why you should be careful with ETF ?
+description: This post is about ETF
+date: 2021-03-02
+img: /img/ETF-picture.jpg
 tags: 
 	- Finance
 layout: layouts/post.njk
