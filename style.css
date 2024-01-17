@@ -6,14 +6,28 @@
     font-display: swap;
 }
 
-* {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
     font-family: Gilroy;
 }
 
+body {
+    min-height: 100vh;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.hero-section {
+    display: flex;
+    align-items: end;
+    
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+}
