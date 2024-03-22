@@ -6,3 +6,93 @@
     font-display: swap;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #000000;
+    font-family: "Gilroy";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 60px;
+    display: flex;
+    position: fixed;
+    top: 0%;
+    bottom: auto;
+    left: 0%;
+    right: 0%;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+a {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: underline;
+    transition: all .2s;
+}
+
+.name-wrapper.w--current {
+    z-index: 1;
+    position: relative;
+}
+
+.name-wrapper {
+    z-index: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.w-inline-block {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.nav-menu {
+    z-index: 1;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.nav-link {
+    margin-left: 30px;
+    font-family: "Gilroy";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.section.hero {
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    display: flex;
+}
+
+.section {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
